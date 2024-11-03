@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import dagger.hilt.android.HiltAndroidApp
 
 
-@HiltAndroidApp
+
 class NukaNoteApplication : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

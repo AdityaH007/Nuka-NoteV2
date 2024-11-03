@@ -4,13 +4,13 @@ plugins {
     id("org.jetbrains.kotlin.kapt")
     id("dagger.hilt.android.plugin")
     alias(libs.plugins.google.gms.google.services)
-    id("com.google.devtools.ksp")
+
 
 }
 
 android {
     namespace = "com.example.nukanote"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.nukanote"
@@ -46,7 +46,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    kapt (libs.artifactid)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -61,8 +61,8 @@ dependencies {
 
     //DI
     // Dagger Core
-    implementation (libs.dagger)
-    kapt (libs.dagger.compiler)
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
 
 // Dagger Android
     api (libs.google.dagger.android)
