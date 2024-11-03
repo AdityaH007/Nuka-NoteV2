@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548295802591",
+    "project_id": "nukanote",
+    "storage_bucket": "nukanote.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548295802591:android:5cad1932f1cb10dee8b36a",
+        "android_client_info": {
+          "package_name": "com.example.nukanote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxLqXlzNeFwUMO_bIvgxjo0UH1RLjsMu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
