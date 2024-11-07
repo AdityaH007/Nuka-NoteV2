@@ -84,6 +84,7 @@ dependencies {
     implementation ("io.noties.markwon:core:4.6.2")
     implementation ("io.noties.markwon:ext-strikethrough:4.6.2")
 
-    //Latex
+    //color picker
+    implementation ("com.github.yukuku:ambilwarna:2.0.1")
 
 }

@@ -42,6 +42,12 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val menuFab: FloatingActionButton = findViewById(R.id.addNoteFab2)
+        menuFab.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+        }
+
         // Initialize ViewModel
         noteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
 
