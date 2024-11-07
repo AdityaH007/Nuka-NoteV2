@@ -8,7 +8,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
+import io.noties.markwon.Markwon
 
 class AddEditActivity : AppCompatActivity() {
 
@@ -31,6 +33,14 @@ class AddEditActivity : AppCompatActivity() {
         contentEditText = findViewById(R.id.noteContentEditText)
         saveButton = findViewById(R.id.saveNoteButton)
         noteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
+
+        // Initialize Markwon for rendering Markdown content
+        val markwon = Markwon.create(this)
+
+        // Set up a listener to show the formatted content as the user types
+        contentEditText.addTextChangedListener {
+            val markdownContent = contentEditText.text.toString()
+        }
 
         saveButton.setOnClickListener {
             saveNote()

@@ -6,50 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".NoteDetailActivity">
 
-    <!-- Title EditText -->
+    <!-- Title EditText (Initially in edit mode) -->
     <EditText
         android:id="@+id/noteDetailTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Title"
-        android:textSize="18sp"
+        android:importantForAccessibility="yes"
         android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/noteDetailContent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.2"
-        android:importantForAccessibility="yes" />
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Content EditText -->
+    <!-- Content EditText (Initially in edit mode) -->
     <EditText
         android:id="@+id/noteDetailContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:hint="Content"
-        android:textSize="16sp"
-        android:padding="16dp"
+        android:hint="Note Content"
         android:importantForAccessibility="yes"
-        app:layout_constraintTop_toBottomOf="@+id/noteDetailTitle"
-        app:layout_constraintStart_toStartOf="parent"
+        android:padding="16dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/saveNoteButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/saveNoteButton"
-        app:layout_constraintVertical_bias="0.0"
-        android:textAlignment="viewStart" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/noteDetailTitle" />
 
-    <!-- Save Button -->
+    <!-- Title TextView (Initially in view mode) -->
+    <TextView
+        android:id="@+id/noteDetailTitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="yes"
+        android:padding="16dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Content TextView (Initially in view mode) -->
+    <TextView
+        android:id="@+id/noteDetailContentView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="yes"
+        android:padding="16dp"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/saveNoteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/noteDetailTitleView" />
+
+    <!-- View/Edit button -->
+
+    <!-- Save button -->
+    <Button
+        android:id="@+id/viewEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/saveNoteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/noteDetailContent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

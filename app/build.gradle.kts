@@ -85,5 +85,5 @@ dependencies {
     implementation ("io.noties.markwon:ext-strikethrough:4.6.2")
 
     //Latex
-    implementation ("com.github.ejlchina:mathview:1.1.0")
+
 }
