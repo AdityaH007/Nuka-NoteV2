@@ -3,8 +3,9 @@ package com.example.nukanote
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
-// NoteViewModel.kt
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
     private val noteRepository: NoteRepository
@@ -16,11 +17,13 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         allNotes = noteRepository.getAllNotes()
     }
 
-    fun getNoteById(id: Int): LiveData<Note> {
-        return noteRepository.getNoteById(id)
+    fun getNoteById(noteId: Int): LiveData<Note> {
+        return noteRepository.getNoteById(noteId)
     }
 
-    // In NoteViewModel.kt
-    fun getNoteById(noteId: Long) = noteRepository.getNoteById(noteId)
-
+    fun insert(note: Note) {
+        viewModelScope.launch {
+            noteRepository.insert(note)
+        }
+    }
 }

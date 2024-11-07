@@ -73,4 +73,10 @@ dependencies {
 // Dagger - Hilt
     implementation (libs.dagger.hilt.android)
     kapt (libs.hilt.android.compiler)
+
+    //coroutines
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1") // Latest version
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
 }

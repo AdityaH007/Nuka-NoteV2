@@ -8,13 +8,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
+import com.example.nukanote.Note
+import com.example.nukanote.NoteViewModel
+import com.example.nukanote.R
 
 class AddEditActivity : AppCompatActivity() {
-
 
     private lateinit var titleEditText: EditText
     private lateinit var contentEditText: EditText
     private lateinit var saveButton: Button
+    private lateinit var noteViewModel: NoteViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,7 @@ class AddEditActivity : AppCompatActivity() {
         titleEditText = findViewById(R.id.noteTitleEditText)
         contentEditText = findViewById(R.id.noteContentEditText)
         saveButton = findViewById(R.id.saveNoteButton)
+        noteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
 
         saveButton.setOnClickListener {
             saveNote()
@@ -45,10 +50,11 @@ class AddEditActivity : AppCompatActivity() {
             return
         }
 
-        // Code to save the note locally using Room database (to be added)
-        // Later, we can sync this with Firebase Firestore.
+        // Save the note using ViewModel
+        val note = Note(title = title, content = content)
+        noteViewModel.insert(note)
 
-        // Navigate back to the main screen
+        Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show()
         finish()
     }
 }

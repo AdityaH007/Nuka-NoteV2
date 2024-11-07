@@ -27,7 +27,7 @@ class NoteDetailActivity : AppCompatActivity() {
 
         if (noteId != -1L) {
             // Observe the specific note by ID
-            noteViewModel.getNoteById(noteId).observe(this, Observer { note ->
+            noteViewModel.getNoteById(noteId.toInt()).observe(this, Observer { note ->
                 if (note != null) {
                     noteDetailTitle.text = note.title
                     noteDetailContent.text = note.content
