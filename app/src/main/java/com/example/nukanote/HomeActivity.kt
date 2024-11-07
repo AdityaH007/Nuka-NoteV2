@@ -2,6 +2,7 @@ package com.example.nukanote
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,8 +25,9 @@ class HomeActivity : AppCompatActivity() {
         noteAdapter = NoteAdapter { note ->
             // Open NoteDetailActivity and pass the note ID
             val intent = Intent(this, NoteDetailActivity::class.java)
-            intent.putExtra("note_id", note.id)
+            intent.putExtra("note_id", note.id.toLong())
             startActivity(intent)
+
         }
 
         // Set up RecyclerView

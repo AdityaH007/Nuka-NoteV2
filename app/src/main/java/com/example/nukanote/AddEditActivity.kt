@@ -9,9 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.nukanote.Note
-import com.example.nukanote.NoteViewModel
-import com.example.nukanote.R
 
 class AddEditActivity : AppCompatActivity() {
 
