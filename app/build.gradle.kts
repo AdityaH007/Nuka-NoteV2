@@ -77,6 +77,13 @@ dependencies {
     //coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1") // Latest version
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
+    //markdown
+    implementation ("io.noties.markwon:core:4.6.2")
+    implementation ("io.noties.markwon:ext-strikethrough:4.6.2")
+
+    //Latex
+    implementation ("com.github.ejlchina:mathview:1.1.0")
 }
