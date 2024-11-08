@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomNoteTheme">
+        <item name="android:textColor">@color/textColor</item>
+        <item name="headingColor">@color/headingColor</item> <!-- Custom attribute -->
+        <item name="boldItalicsColor">@color/boldItalicsColor</item> <!-- Custom attribute -->
+        <item name="android:background">@color/backgroundColor</item>
+    </style>
+</resources>

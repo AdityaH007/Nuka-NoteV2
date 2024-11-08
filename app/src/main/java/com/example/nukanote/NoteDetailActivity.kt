@@ -29,6 +29,14 @@ class NoteDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note_detail)
 
+
+        applyTheme()
+
+        // Observe theme changes
+        ThemeManager.themeChanged.observe(this, Observer {
+            applyTheme()
+        })
+
         // Initialize Markwon after setContentView
         markwon = Markwon.create(this)
 
@@ -86,6 +94,15 @@ class NoteDetailActivity : AppCompatActivity() {
                 setEditMode()
             }
         }
+    }
+
+    private fun applyTheme() {
+        // Apply the background color to the root view
+        findViewById<android.view.View>(android.R.id.content).setBackgroundColor(
+            ThemeManager.getBackgroundColor(this)
+        )
+        // Remove recreate() as it's not necessary just for background color changes
+        // and can cause a jarring user experience
     }
 
     private fun setViewMode() {

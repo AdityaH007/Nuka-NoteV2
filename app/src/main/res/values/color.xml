@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textColor">#000000</color> <!-- Default text color -->
+    <color name="headingColor">#000000</color> <!-- Default heading color -->
+    <color name="boldItalicsColor">#000000</color> <!-- Default bold/italics color -->
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="PrimaryColor">#FFFFFF</color><!-- Default background color -->
+</resources>

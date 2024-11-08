@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import io.noties.markwon.Markwon
 
@@ -29,6 +30,13 @@ class AddEditActivity : AppCompatActivity() {
             insets
         }
 
+        applyTheme()
+
+        // Observe theme changes
+        ThemeManager.themeChanged.observe(this, Observer {
+            applyTheme()
+        })
+
         titleEditText = findViewById(R.id.noteTitleEditText)
         contentEditText = findViewById(R.id.noteContentEditText)
         saveButton = findViewById(R.id.saveNoteButton)
@@ -45,6 +53,16 @@ class AddEditActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             saveNote()
         }
+    }
+
+
+    private fun applyTheme() {
+        // Apply the background color to the root view
+        findViewById<android.view.View>(android.R.id.content).setBackgroundColor(
+            ThemeManager.getBackgroundColor(this)
+        )
+        // Remove recreate() as it's not necessary just for background color changes
+        // and can cause a jarring user experience
     }
 
     private fun saveNote() {
